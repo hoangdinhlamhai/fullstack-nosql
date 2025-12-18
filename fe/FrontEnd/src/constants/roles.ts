@@ -1,0 +1,4 @@
+export const ROLE = {
+  ADMIN: "693400a32d6b723a60534f14",
+  USER: "693400b32d6b723a60534f15",
+};

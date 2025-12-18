@@ -1,0 +1,402 @@
+/* OrderHistoryPage.css – CHUẨN 2025 FPT SHOP / CELLPHONES – ĐẸP NHẤT */
+.order-history-page {
+  padding: 16px 0;
+  background: #f7f7f7;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.order-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 12px;
+}
+
+/* Nút Quay lại */
+.back-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  font-size: 15px;
+  color: #0066cc;
+  cursor: pointer;
+  padding: 8px 0;
+  margin-bottom: 12px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.back-btn::before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230066cc'%3E%3Cpath d='M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+
+.back-btn:hover {
+  color: #d70018;
+  gap: 10px;
+}
+
+.back-btn:hover::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23d70018'%3E%3Cpath d='M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z'/%3E%3C/svg%3E");
+}
+
+.page-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 20px;
+  color: #222;
+}
+
+/* Layout 2 cột */
+.orders-grid {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 20px;
+  align-items: start;
+}
+
+/* Danh sách đơn hàng bên trái */
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.order-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border: 2px solid transparent;
+}
+
+.order-card:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+
+.order-card.active {
+  border-color: #0066cc;
+  background: linear-gradient(0deg, #f8fbff, #ffffff);
+  box-shadow:
+    0 8px 24px rgba(0, 102, 204, 0.18),
+    inset 0 0 0 1px rgba(0, 102, 204, 0.15);
+}
+
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.order-id {
+  font-weight: 700;
+  font-size: 15.5px;
+  color: #222;
+}
+
+.order-date {
+  font-size: 13px;
+  color: #777;
+  margin-top: 2px;
+}
+
+.order-status {
+  font-weight: 700;
+  font-size: 13px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: #eee;
+  color: #555;
+  white-space: nowrap;
+}
+
+/* Trạng thái cụ thể */
+.order-status.PENDING {
+  background: #fff3e0;
+  color: #ff9800;
+}
+
+.order-status.COMPLETED {
+  background: #e8f5e9;
+  color: #00c853;
+}
+
+.order-status.DELIVERED {
+  background: #e3f2fd;
+  color: #0066cc;
+}
+
+.order-status.CANCELLED {
+  background: #fdecea;
+  color: #d70018;
+}
+
+
+.order-items-preview img {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+.more-items {
+  font-size: 13px;
+  color: #666;
+  background: #eee;
+  padding: 4px 9px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+/* Panel chi tiết bên phải */
+.order-detail-panel {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+  height: fit-content;
+  position: sticky;
+  top: 12px;
+}
+
+.order-detail-panel h2 {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 16px;
+  color: #222;
+}
+
+.detail-info p {
+  margin: 8px 0;
+  font-size: 14px;
+  color: #444;
+}
+
+.detail-products {
+  margin: 20px 0;
+  border-top: 1px solid #eee;
+  padding-top: 16px;
+}
+
+.detail-item {
+  display: flex;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px dashed #eee;
+  align-items: center;
+}
+
+.detail-item:last-child {
+  border-bottom: none;
+}
+
+.detail-item img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.detail-item-info h4 {
+  margin: 0 0 6px;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #222;
+  line-height: 1.4;
+}
+
+.detail-item-info p {
+  margin: 3px 0;
+  font-size: 13.5px;
+  color: #666;
+}
+
+.detail-price {
+  margin-left: auto;
+  font-weight: 700;
+  color: #d70018;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+.detail-total {
+  text-align: right;
+  padding: 18px 0;
+  border-top: 2px solid #eee;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.final-price {
+  color: #d70018;
+  margin-left: 8px;
+}
+
+.detail-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.btn-reorder,
+.btn-support {
+  flex: 1;
+  padding: 13px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14.5px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-reorder {
+  background: #0066cc;
+  color: white;
+  border: none;
+}
+
+.btn-reorder:hover {
+  background: #0052a3;
+}
+
+.btn-support {
+  background: #f8f9fa;
+  color: #333;
+  border: 1.5px solid #ddd;
+}
+
+.btn-support:hover {
+  background: #eee;
+  border-color: #ccc;
+}
+
+.no-order-selected {
+  text-align: center;
+  padding: 80px 20px;
+  color: #999;
+  font-size: 15px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .orders-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .order-detail-panel {
+    position: static;
+  }
+}
+
+@media (max-width: 480px) {
+  .order-container { padding: 0 8px; }
+  .detail-item { flex-direction: column; align-items: flex-start; }
+  .detail-price { margin-left: 78px; margin-top: 8px; }
+  .detail-actions { flex-direction: column; }
+}
+
+.order-items-preview-text {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #444;
+  font-weight: 500;
+}
+
+.order-card:not(.active) .order-items-preview-text {
+  color: #777;
+}
+
+.order-items-preview-text::before {
+  content: "• ";
+  color: #0066cc;
+  font-weight: bold;
+}
+
+.order-history-page {
+  background: linear-gradient(180deg, #f7f9fc 0%, #f3f4f6 100%);
+}
+
+.detail-total {
+  text-align: right;
+  padding: 18px 0;
+  border-top: 2px dashed #eee;
+  font-size: 18px;
+}
+
+.final-price {
+  color: #d70018;
+  margin-left: 10px;
+  font-size: 22px;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;          /* ✅ canh giữa theo chiều dọc */
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px dashed #eee;
+}
+
+.detail-item img {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0;               /* ❗ KHÔNG cho ảnh bị ép */
+}
+
+.detail-item-info {
+  flex: 1;                      /* ✅ chiếm hết khoảng trống */
+  min-width: 0;                 /* ❗ fix lỗi text overflow */
+}
+
+.detail-item-info h4 {
+  margin: 0 0 6px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #222;
+  line-height: 1.35;
+}
+
+.detail-item-info p {
+  margin: 0;
+  font-size: 13.5px;
+  color: #666;
+}
+
+.detail-price {
+  min-width: 140px;             /* ✅ khóa cột giá */
+  text-align: right;
+  font-weight: 700;
+  font-size: 16px;
+  color: #d70018;
+  white-space: nowrap;
+}
+
+.order-customer {
+  margin-top: 4px;
+  font-size: 13.5px;
+  color: #555;
+  font-weight: 500;
+}
+
+.order-customer {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+  font-size: 13.5px;
+  color: #0066cc;
+  font-weight: 600;
+}
